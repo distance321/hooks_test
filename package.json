@@ -1,0 +1,99 @@
+{
+  "name": "hoos_test",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config webpack/webpack.dev.js",
+    "prebuild": "rimraf dist && rimraf dist.zip",
+    "build": "cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js",
+    "lint:es": "eslint --ext .js src mock tests",
+    "lint:ts": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "precommit": "lint-staged"
+  },
+  "author": "wangxiaofeng",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/polyfill": "^7.4.3",
+    "@babel/runtime": "^7.4.3",
+    "antd": "^3.16.3",
+    "axios": "^0.18.0",
+    "debounce-async": "^0.0.2",
+    "dotenv": "^7.0.0",
+    "global": "^4.3.2",
+    "normalize.css": "^8.0.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router": "4.3.0",
+    "react-router-dom": "4.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "@types/node": "^11.13.4",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-router-dom": "^4.3.2",
+    "@types/webpack": "^4.4.27",
+    "autoprefixer": "^9.5.1",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "classnames": "^2.2.6",
+    "compression-webpack-plugin": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "cssnano-preset-advanced": "^4.0.7",
+    "dayjs": "^1.8.12",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.12.4",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-modules": "^1.4.1",
+    "prop-types": "^15.7.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "tslint": "^5.15.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.4.3",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-dev-server": "^3.3.1",
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.2.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "alias": {
+    "components": "./src/components",
+    "utils": "./src/utils"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
