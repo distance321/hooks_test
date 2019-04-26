@@ -13,7 +13,10 @@ module.exports = {
     filename: '[name].[contenthash].js'
   },
   devServer: {
+    historyApiFallback: true,
+    progress: true,
     inline: true,
+    quiet: true,
     port: 8001
   },
   devtool: "source-map",
