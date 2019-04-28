@@ -6,7 +6,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const prodConfig = {
   output: {
-    publicPath: './dist/'
+    publicPath: './dist/',
+    filename: '[name].[contenthash].js'
   },
   module: {
     rules: [

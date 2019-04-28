@@ -2,7 +2,7 @@ import { Layout } from 'antd';
 import React, { PureComponent } from 'react'
 import BasicRoute from '../routes/routes'
 const { Header, Footer, Sider, Content} = Layout;
-
+import { hot } from 'react-hot-loader'
 class App extends PureComponent{
   render() {
     return (
@@ -18,4 +18,4 @@ class App extends PureComponent{
   }
 }
 
-export default App
+export default hot(module)(App)

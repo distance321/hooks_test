@@ -10,7 +10,6 @@ module.exports = {
   },
   output: {
     path: resolvePath('dist'),
-    filename: '[name].[contenthash].js'
   },
   devServer: {
     historyApiFallback: true,
@@ -25,11 +24,19 @@ module.exports = {
   },
   module: {
       rules: [
-          {test: /\.(ts|tsx)$/, use: [{loader: 'awesome-typescript-loader'}] },
-          { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
-      ],
-      rules: [
-        { test: /\.ts[x]?$/, exclude: /node_modules/, use: ['babel-loader','ts-loader'] }
+        { test: /\.ts[x]?$/, 
+          exclude: /node_modules/, 
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                babelrc: true,
+                plugins: ['react-hot-loader/babel'],
+              },
+            },
+            'ts-loader', // (or awesome-typescript-loader)
+          ],
+        }
       ]
   },
   plugins: [

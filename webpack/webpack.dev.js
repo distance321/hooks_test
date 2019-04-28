@@ -5,7 +5,8 @@ const path = require('path');
 const prodConfig = {
   mode: "development",
   output: {
-    publicPath: '/'
+    publicPath: '/',
+    filename: '[name].js'
   },
   module: {
     rules: [

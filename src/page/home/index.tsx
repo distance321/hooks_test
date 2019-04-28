@@ -1,15 +1,17 @@
 import React, { useState, useEffect  } from 'react';
 import request from '../../utils/request'
+import '../../../mock/test.js'
+import axios from 'axios'
 export default function Example() {
   const [count, setCount] = useState(0);
-  const [url,setUrl] = useState('http://localhost:3000/api/v1/users')
+  const [url,setUrl] = useState('/api/test')
   const [data, setData] = useState([])
   useEffect(() => {
     fetch(url)
   },[url])
 
   const fetch =  async (url:string) => {
-    const res = await request(url)
+    const res = await axios.get('/data')
     setData(res.data)
   }
   return (
